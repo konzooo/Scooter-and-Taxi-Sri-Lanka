@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMA Scooter Rental & Taxi Service | Ahangama, Sri Lanka</title>
+  <meta name="description" content="Rent scooters from 2500 LKR/day, book airport transfers, and arrange tours in Ahangama and Southern Sri Lanka. Trusted local service by Mahesh Jeewantha.">
+  <meta name="keywords" content="scooter rental Ahangama, Sri Lanka taxi, airport transfer Colombo, surf scooter rental, Southern Sri Lanka tours">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SMA Scooter Rental & Taxi - Ahangama, Sri Lanka">
+  <meta property="og:description" content="Scooters from 2500 LKR/day. Airport transfers, tours & more. Chat on WhatsApp!">
+  <meta property="og:image" content="scooter with surf mount.webp">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛵</text></svg>">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+            },
+            whatsapp: '#25D366',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .hero-overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.5) 0%,
+        rgba(0,0,0,0.2) 40%,
+        rgba(0,0,0,0.5) 100%
+      );
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.95); opacity: 0.7; }
+      70% { transform: scale(1.4); opacity: 0; }
+      100% { transform: scale(0.95); opacity: 0; }
+    }
+    .whatsapp-pulse::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: #25D366;
+      animation: pulse-ring 2s ease-out infinite;
+      z-index: -1;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.open {
+      max-height: 500px;
+    }
+
+    .nav-scrolled {
+      background: rgba(255,255,255,0.97) !important;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
+    }
+    .nav-scrolled .nav-link { color: #334155 !important; }
+    .nav-scrolled .nav-link:hover { color: #059669 !important; }
+    .nav-scrolled .nav-logo { color: #059669 !important; }
+    .nav-scrolled .nav-logo-sub { color: #475569 !important; }
+    .nav-scrolled .nav-cta {
+      background: #059669 !important;
+      color: white !important;
+    }
+    .nav-scrolled .menu-btn-icon { color: #334155 !important; }
+  </style>
+</head>
+<body class="font-sans text-slate-800 overflow-x-hidden">
+
+  <!-- ============================================ -->
+  <!-- NAVIGATION                                    -->
+  <!-- ============================================ -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Logo -->
+        <a href="#hero" class="flex items-baseline gap-1.5">
+          <span class="nav-logo text-xl md:text-2xl font-extrabold text-white transition-colors duration-300">SMA</span>
+          <span class="nav-logo-sub text-sm font-medium text-white/80 hidden sm:inline transition-colors duration-300">Scooter & Taxi</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#transfers" class="nav-link text-sm font-medium text-white/90 hover:text-white transition-colors duration-300">Transfers</a>
+          <a href="#scooters" class="nav-link text-sm font-medium text-white/90 hover:text-white transition-colors duration-300">Scooters</a>
+          <a href="#services" class="nav-link text-sm font-medium text-white/90 hover:text-white transition-colors duration-300">Services</a>
+          <a href="#about" class="nav-link text-sm font-medium text-white/90 hover:text-white transition-colors duration-300">About</a>
+          <a href="#faq" class="nav-link text-sm font-medium text-white/90 hover:text-white transition-colors duration-300">FAQ</a>
+          <a href="https://wa.me/94719331263?text=Hi%20Mahesh,%20I'd%20like%20to%20inquire%20about..." target="_blank" rel="noopener"
+             class="nav-cta inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-white/30 transition-all duration-300">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            WhatsApp
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden p-2 -mr-2" aria-label="Open menu">
+          <i data-lucide="menu" class="w-6 h-6 menu-btn-icon text-white transition-colors duration-300"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <div class="px-6 py-4 space-y-1">
+        <a href="#transfers" class="block py-3 text-slate-700 font-medium border-b border-slate-100">Transfers</a>
+        <a href="#scooters" class="block py-3 text-slate-700 font-medium border-b border-slate-100">Scooters</a>
+        <a href="#services" class="block py-3 text-slate-700 font-medium border-b border-slate-100">Services</a>
+        <a href="#about" class="block py-3 text-slate-700 font-medium border-b border-slate-100">About</a>
+        <a href="#faq" class="block py-3 text-slate-700 font-medium border-b border-slate-100">FAQ</a>
+        <a href="https://wa.me/94719331263?text=Hi%20Mahesh,%20I'd%20like%20to%20inquire%20about..." target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-2 mt-4 bg-green-500 text-white font-semibold px-6 py-3 rounded-full">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- HERO                                          -->
+  <!-- ============================================ -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <img src="scooter with surf mount.webp"
+         alt="Scooter parked by lush green rice paddies with palm trees in Ahangama, Sri Lanka"
+         class="absolute inset-0 w-full h-full object-cover"
+         loading="eager" fetchpriority="high">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+        Your Trusted Journey in Ahangama Starts Here
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 mb-8 font-light">
+        Scooter Rental &bull; Airport Transfers &bull; Island Tours &bull; Local Expertise
+      </p>
+      <a href="https://wa.me/94719331263?text=Hi%20Mahesh,%20I'd%20like%20to%20inquire%20about..." target="_blank" rel="noopener"
+         class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg hover:shadow-xl transition-all hover:scale-105">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+        Chat with Mahesh
+      </a>
+      <p class="mt-6 text-sm text-white/60">Trusted by 500+ travelers on the South Coast</p>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <i data-lucide="chevron-down" class="w-6 h-6 text-white/50"></i>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- TRANSFER SERVICES                             -->
+  <!-- ============================================ -->
+  <section id="transfers" class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <span class="text-sm font-semibold tracking-widest text-emerald-600 uppercase">Transfers & Taxi</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Safe & Reliable Transfers</h2>
+        <p class="text-slate-500 mt-3 max-w-xl mx-auto">From airport arrivals to island-wide travel, Mahesh ensures you get there comfortably and on time.</p>
+      </div>
+
+      <!-- Feature Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div class="bg-slate-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+          <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <i data-lucide="plane-landing" class="w-7 h-7 text-emerald-600"></i>
+          </div>
+          <h3 class="font-semibold text-lg text-slate-900 mb-2">Airport Pickup</h3>
+          <p class="text-slate-500 text-sm">Meet & greet at Bandaranaike International Airport with a personalized welcome sign. Direct drive to Ahangama.</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+          <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <i data-lucide="car" class="w-7 h-7 text-emerald-600"></i>
+          </div>
+          <h3 class="font-semibold text-lg text-slate-900 mb-2">Private Transfers</h3>
+          <p class="text-slate-500 text-sm">Comfortable AC Toyota Prius for private rides. Galle, Mirissa, Weligama, Unawatuna &mdash; anywhere along the coast.</p>
+        </div>
+        <div class="bg-slate-50 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+          <div class="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+            <i data-lucide="map-pin" class="w-7 h-7 text-emerald-600"></i>
+          </div>
+          <h3 class="font-semibold text-lg text-slate-900 mb-2">Island-Wide Travel</h3>
+          <p class="text-slate-500 text-sm">Multi-day trips to Ella, Kandy, Sigiriya, and beyond. Mahesh knows the best routes and hidden stops.</p>
+        </div>
+      </div>
+
+      <!-- Photo Gallery -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-14">
+        <div class="rounded-xl overflow-hidden aspect-[4/3]">
+          <img src="pick up service airport, photo with tourists and driver.webp"
+               alt="Mahesh greeting tourists at Colombo airport with SMA welcome sign"
+               class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="rounded-xl overflow-hidden aspect-[4/3]">
+          <img src="pickup service airport.webp"
+               alt="Happy tourist at airport with SMA welcome sign giving thumbs up"
+               class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="rounded-xl overflow-hidden aspect-[4/3]">
+          <img src="Car1.jpg"
+               alt="White Toyota Prius on the beach at sunset - SMA taxi fleet"
+               class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+        <div class="rounded-xl overflow-hidden aspect-[4/3]">
+          <img src="car2.webp"
+               alt="Toyota Prius front view with headlights - clean and modern"
+               class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-12">
+        <a href="https://wa.me/94719331263?text=Hi%20Mahesh,%20I'd%20like%20to%20book%20a%20transfer..." target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-7 py-3.5 rounded-full transition-all hover:scale-105">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Book Your Transfer
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SCOOTER RENTAL                                -->
+  <!-- ============================================ -->
+  <section id="scooters" class="py-20 px-6 bg-slate-50">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <span class="text-sm font-semibold tracking-widest text-emerald-600 uppercase">Scooter Rental</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Explore the South Coast on Two Wheels</h2>
+        <p class="text-slate-500 mt-3 max-w-xl mx-auto">The best way to discover hidden beaches, rice paddies, and surf spots along the coast.</p>
+      </div>
+
+      <!-- Price Box -->
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10 max-w-lg mx-auto text-center mb-14">
+        <span class="text-sm text-slate-400 uppercase tracking-wide">Starting from</span>
+        <div class="mt-2 mb-5">
+          <span class="text-5xl font-extrabold text-emerald-700">2,500</span>
+          <span class="text-xl text-slate-500 ml-1">LKR / day</span>
+        </div>
+        <div class="space-y-3 text-left max-w-xs mx-auto">
+          <div class="flex items-center gap-3 text-sm text-slate-600">
+            <i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i>
+            <span>Helmet included for rider & passenger</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm text-slate-600">
+            <i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i>
+            <span>Free delivery to your accommodation</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm text-slate-600">
+            <i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i>
+            <span>Surfboard mount available</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm text-slate-600">
+            <i data-lucide="check" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i>
+            <span>Long-term discounts &mdash; ask Mahesh!</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fleet Gallery -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div class="rounded-xl overflow-hidden aspect-[4/3] relative group">
+          <img src="branded scooter 2.webp" alt="Yellow Honda Dio scooter with SMA branding"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <span class="text-white text-sm font-medium">Honda Dio &mdash; SMA Fleet</span>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden aspect-[4/3] relative group">
+          <img src="scooter with branded logo.webp" alt="Blue and white Honda scooter with SMA branding"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <span class="text-white text-sm font-medium">Honda Dio &mdash; Branded</span>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden aspect-[4/3] relative group">
+          <img src="scooter1.webp" alt="Black Honda Dio scooter - sleek matte finish"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <span class="text-white text-sm font-medium">Honda Dio &mdash; Black</span>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden aspect-[4/3] relative group">
+          <img src="different motorbike, stronger.webp" alt="Honda Navi adventure-style motorbike for rougher terrain"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <span class="text-white text-sm font-medium">Honda Navi &mdash; Adventure</span>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden aspect-[4/3] relative group">
+          <img src="scooter with tourists.webp" alt="Happy tourist couple riding SMA branded scooter"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <span class="text-white text-sm font-medium">Happy riders!</span>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden aspect-[4/3] relative group">
+          <img src="tourist on motorbike.webp" alt="Tourist exploring the coast on a scooter with palm trees"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+            <span class="text-white text-sm font-medium">Exploring the coast</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-12">
+        <a href="https://wa.me/94719331263?text=Hi%20Mahesh,%20I'd%20like%20to%20rent%20a%20scooter..." target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-7 py-3.5 rounded-full transition-all hover:scale-105">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Rent a Scooter
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- OTHER SERVICES                                -->
+  <!-- ============================================ -->
+  <section id="services" class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <span class="text-sm font-semibold tracking-widest text-emerald-600 uppercase">More Services</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Everything You Need for Your Trip</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 md:gap-16">
+        <!-- Tours & Adventures -->
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">Tours & Adventures</h3>
+          <p class="text-slate-500 mb-6">From wildlife safaris to mountain trains, Mahesh arranges unforgettable experiences across Sri Lanka.</p>
+          <div class="space-y-3 mb-8">
+            <div class="flex items-center gap-3 text-sm text-slate-600">
+              <i data-lucide="binoculars" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i>
+              <span>Yala & Udawalawe Safari trips</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-slate-600">
+              <i data-lucide="train-front" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i>
+              <span>Ella &amp; Nine Arches Bridge day trips</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-slate-600">
+              <i data-lucide="waves" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i>
+              <span>Whale watching in Mirissa</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-slate-600">
+              <i data-lucide="landmark" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i>
+              <span>Galle Fort, Kandy, Sigiriya &amp; more</span>
+            </div>
+            <div class="flex items-center gap-3 text-sm text-slate-600">
+              <i data-lucide="route" class="w-5 h-5 text-emerald-500 flex-shrink-0"></i>
+              <span>Custom itineraries tailored to you</span>
+            </div>
+          </div>
+          <!-- Tour Photos -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="rounded-xl overflow-hidden aspect-[4/3]">
+              <img src="safari1.webp" alt="Family of tourists enjoying a safari jeep ride"
+                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <div class="rounded-xl overflow-hidden aspect-[4/3]">
+              <img src="safari2.webp" alt="Leopard spotted during safari in Yala National Park"
+                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+            <div class="rounded-xl overflow-hidden aspect-[4/3] col-span-2">
+              <img src="tourguide with tourists.webp" alt="Mahesh with tourists at the famous Nine Arches Bridge in Ella"
+                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Laundry Service -->
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 mb-4">Laundry Service</h3>
+          <p class="text-slate-500 mb-6">Traveling light? Drop off your laundry and pick it up fresh. Perfect for surfers and long-term travelers.</p>
+
+          <div class="bg-slate-50 rounded-2xl p-8 mb-8">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="shirt" class="w-8 h-8 text-emerald-600"></i>
+              </div>
+              <span class="text-sm text-slate-400 uppercase tracking-wide">Just</span>
+              <div class="mt-1">
+                <span class="text-4xl font-extrabold text-emerald-700">800</span>
+                <span class="text-lg text-slate-500 ml-1">LKR / kg</span>
+              </div>
+              <p class="text-slate-400 text-sm mt-3">Wash, dry &amp; fold. Same-day service available.</p>
+            </div>
+          </div>
+
+          <!-- Additional info card -->
+          <div class="bg-emerald-50 rounded-2xl p-8 border border-emerald-100">
+            <h4 class="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+              <i data-lucide="lightbulb" class="w-5 h-5 text-amber-500"></i>
+              Mahesh Can Also Help With
+            </h4>
+            <div class="space-y-2 text-sm text-slate-600">
+              <p>&bull; Finding the best ATMs nearby</p>
+              <p>&bull; Getting a local SIM card</p>
+              <p>&bull; Restaurant &amp; surf spot recommendations</p>
+              <p>&bull; Emergency roadside assistance</p>
+              <p>&bull; Anything else you need &mdash; just ask!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-14">
+        <a href="https://wa.me/94719331263?text=Hi%20Mahesh,%20I'd%20like%20to%20ask%20about%20your%20services..." target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-7 py-3.5 rounded-full transition-all hover:scale-105">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Ask About Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- ABOUT                                         -->
+  <!-- ============================================ -->
+  <section id="about" class="py-20 px-6 bg-emerald-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Image -->
+        <div class="flex justify-center">
+          <img src="About.png" alt="Mahesh Jeewantha standing with his white Toyota Prius in Ahangama"
+               class="rounded-2xl shadow-2xl max-w-sm w-full" loading="lazy">
+        </div>
+        <!-- Text -->
+        <div class="text-white">
+          <span class="text-sm font-semibold tracking-widest text-emerald-300 uppercase">About SMA</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">Meet Mahesh &mdash; Your Local Friend in Ahangama</h2>
+          <p class="text-emerald-100/80 mb-4 leading-relaxed">
+            Mahesh Jeewantha has been helping travelers discover the South Coast for over five years. What started as giving directions to lost surfers turned into a family-run service that now includes scooter rentals, airport transfers, tour arrangements, and more.
+          </p>
+          <p class="text-emerald-100/80 mb-8 leading-relaxed">
+            When you book with SMA, you're not just getting a service &mdash; you're getting a friend who knows every hidden beach, the best kottu spots, and which roads to avoid after rain. Mahesh is available 24/7 on WhatsApp and personally ensures every guest has a safe, memorable experience.
+          </p>
+
+          <!-- Trust Stats -->
+          <div class="grid grid-cols-3 gap-6 mb-8">
+            <div class="text-center">
+              <div class="text-3xl font-extrabold text-white">500+</div>
+              <div class="text-sm text-emerald-300 mt-1">Happy Travelers</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-extrabold text-white">5+</div>
+              <div class="text-sm text-emerald-300 mt-1">Years of Service</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-extrabold text-white">24/7</div>
+              <div class="text-sm text-emerald-300 mt-1">Available</div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/94719331263?text=Hi%20Mahesh!" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 bg-white text-emerald-800 font-semibold px-7 py-3.5 rounded-full hover:bg-emerald-50 transition-all hover:scale-105">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Say Hello to Mahesh
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- SOCIAL PROOF / TESTIMONIALS                   -->
+  <!-- ============================================ -->
+  <section id="reviews" class="py-20 px-6 bg-slate-50">
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <span class="text-sm font-semibold tracking-widest text-emerald-600 uppercase">What Travelers Say</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Real Experiences, Real People</h2>
+      </div>
+
+      <!-- Testimonial Cards -->
+      <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
+              <img src="scooter with tourists.webp" alt="Tourist couple on scooter"
+                   class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div>
+              <div class="font-semibold text-slate-900">Sarah & Tom</div>
+              <div class="text-sm text-slate-400">Australia</div>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            &ldquo;We were nervous about riding a scooter in Sri Lanka, but Mahesh showed us the safest routes, reminded us to drive on the left, and even gave us a little map of the coast. The scooter was in perfect condition with working lights and good tires. Felt completely safe.&rdquo;
+          </p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
+              <img src="pickup service airport.webp" alt="Tourist at airport with welcome sign"
+                   class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div>
+              <div class="font-semibold text-slate-900">Gizem</div>
+              <div class="text-sm text-slate-400">Turkey</div>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            &ldquo;My flight landed at 2 AM and I was worried no one would show up. Mahesh was right there with my name on a sign, smiling. The drive to Ahangama was smooth, he had cold water in the car, and he even helped me find a SIM card the next morning. Above and beyond.&rdquo;
+          </p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white rounded-2xl p-6 shadow-sm">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-full overflow-hidden flex-shrink-0">
+              <img src="safari1.webp" alt="Family in safari jeep"
+                   class="w-full h-full object-cover" loading="lazy">
+            </div>
+            <div>
+              <div class="font-semibold text-slate-900">The Weber Family</div>
+              <div class="text-sm text-slate-400">Germany</div>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            &ldquo;Mahesh organized a safari to Yala for our family and we spotted a leopard on the first morning! He knows exactly which guides to book and which hotels along the way are family-friendly. Our kids still talk about it. Worth every rupee.&rdquo;
+          </p>
+        </div>
+      </div>
+
+      <!-- Cat fun element -->
+      <div class="mt-14 flex flex-col items-center">
+        <div class="w-48 h-48 rounded-2xl overflow-hidden shadow-sm">
+          <img src="cute additional photo of scooter and cat.webp" alt="Local cat sleeping on a SMA scooter seat"
+               class="w-full h-full object-cover" loading="lazy">
+        </div>
+        <p class="text-slate-400 text-sm mt-3 italic">Even the local cats love our scooters</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FAQ                                           -->
+  <!-- ============================================ -->
+  <section id="faq" class="py-20 px-6 bg-white">
+    <div class="max-w-3xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <span class="text-sm font-semibold tracking-widest text-emerald-600 uppercase">Travel Tips & FAQ</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Everything You Need to Know</h2>
+        <p class="text-slate-500 mt-3">Tips from Mahesh and hundreds of travelers before you.</p>
+      </div>
+
+      <!-- Accordion -->
+      <div class="divide-y divide-slate-200 border-t border-b border-slate-200">
+        <!-- Q1 -->
+        <div>
+          <button class="faq-toggle w-full flex justify-between items-center py-5 text-left">
+            <span class="font-medium text-slate-900 pr-4">How do I rent a scooter from SMA?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+              Just send Mahesh a WhatsApp message with your dates and he'll confirm availability. He delivers the scooter directly to your hotel or guesthouse. You'll need to bring your passport for a quick ID check. No deposit needed &mdash; it's all based on trust. Pay in cash (LKR) when you pick up.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div>
+          <button class="faq-toggle w-full flex justify-between items-center py-5 text-left">
+            <span class="font-medium text-slate-900 pr-4">Do I need a license to ride a scooter in Sri Lanka?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+              Technically, you need an International Driving Permit (IDP) with a motorcycle endorsement, which you should get in your home country before traveling. In practice, many travelers ride without one, but police checkpoints do happen (especially around Galle and Mirissa) and the fine is around 3,000&ndash;5,000 LKR. Mahesh always recommends getting your IDP to be safe.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div>
+          <button class="faq-toggle w-full flex justify-between items-center py-5 text-left">
+            <span class="font-medium text-slate-900 pr-4">Is it safe to ride a scooter on Sri Lankan roads?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+              The South Coast roads are generally good and well-paved. The key things to remember: drive on the <strong>left side</strong>, watch for dogs and tuk-tuks, use your horn at blind corners, and avoid riding at night if you can. Mahesh provides helmets and will brief you on local road rules. Start slow &mdash; after a day you'll feel comfortable.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div>
+          <button class="faq-toggle w-full flex justify-between items-center py-5 text-left">
+            <span class="font-medium text-slate-900 pr-4">How does the airport pickup work?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+              Share your flight number and arrival time on WhatsApp. Mahesh (or his trusted driver) will be waiting in the arrivals hall with a sign that has your name on it. The drive from Bandaranaike International Airport (BIA) to Ahangama takes about 3&ndash;3.5 hours via the Southern Expressway. The car has AC, and you can make stops along the way if needed.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div>
+          <button class="faq-toggle w-full flex justify-between items-center py-5 text-left">
+            <span class="font-medium text-slate-900 pr-4">Where can I get a SIM card and find ATMs?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+              You can buy a tourist SIM card (Dialog or Mobitel) right at the airport for about 1,500 LKR with data included. In Ahangama, there are ATMs at the Commercial Bank and BOC near the main road. Pro tip: always carry some cash &mdash; many small restaurants and beach shops don't accept cards. Mahesh can point you to the nearest ATM.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div>
+          <button class="faq-toggle w-full flex justify-between items-center py-5 text-left">
+            <span class="font-medium text-slate-900 pr-4">What's the best time to visit the South Coast?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+              The dry season runs from <strong>November to April</strong> &mdash; this is peak time with warm weather and great surf. The shoulder months (October and May) offer fewer crowds and lower prices with still-decent weather. June to September is monsoon season with more rain, but it's not constant and you'll have the beaches almost to yourself.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div>
+          <button class="faq-toggle w-full flex justify-between items-center py-5 text-left">
+            <span class="font-medium text-slate-900 pr-4">Can you arrange multi-day tours to Ella or Kandy?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+              Absolutely. Mahesh can arrange private car tours to Ella (the famous train ride, Nine Arches Bridge, Little Adam's Peak), Kandy (Temple of the Tooth, botanical gardens), Sigiriya, and anywhere else on the island. He'll help with hotel bookings along the way too. Multi-day tours are priced per day and include the car, driver, and fuel. Just tell him your interests and he'll create a custom itinerary.
+            </div>
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div>
+          <button class="faq-toggle w-full flex justify-between items-center py-5 text-left">
+            <span class="font-medium text-slate-900 pr-4">What should I pack for Sri Lanka?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+              Light, breathable clothing (it's tropical!), reef-safe sunscreen, mosquito repellent, a light rain jacket, and comfortable sandals. If you're surfing, bring your own rash guard &mdash; board rentals are easy to find. For temple visits you'll need clothes that cover your knees and shoulders. And don't worry about overpacking &mdash; Mahesh offers laundry service too!
+            </div>
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div>
+          <button class="faq-toggle w-full flex justify-between items-center py-5 text-left">
+            <span class="font-medium text-slate-900 pr-4">Do you offer long-term scooter rental discounts?</span>
+            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="pb-5 text-slate-600 text-sm leading-relaxed">
+              Yes! If you're staying for a week or more, Mahesh offers discounted rates. The longer you rent, the better the daily price. Just message him on WhatsApp with your dates and he'll give you a custom quote. Monthly rentals are especially popular with digital nomads and long-term surfers.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOOTER                                        -->
+  <!-- ============================================ -->
+  <footer class="py-16 px-6 bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-12">
+        <!-- Contact -->
+        <div>
+          <div class="mb-4">
+            <span class="text-2xl font-extrabold text-white">SMA</span>
+            <span class="text-sm font-medium text-slate-400 ml-1.5">Scooter Rental & Taxi</span>
+          </div>
+          <div class="space-y-3 text-sm">
+            <a href="tel:+94719331263" class="flex items-center gap-3 text-slate-300 hover:text-white transition-colors">
+              <i data-lucide="phone" class="w-4 h-4"></i>
+              +94 71 933 1263
+            </a>
+            <a href="https://wa.me/94719331263?text=Hi%20Mahesh!" target="_blank" rel="noopener"
+               class="flex items-center gap-3 text-slate-300 hover:text-white transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              WhatsApp Mahesh
+            </a>
+            <div class="flex items-center gap-3 text-slate-300">
+              <i data-lucide="map-pin" class="w-4 h-4 flex-shrink-0"></i>
+              Ahangama, Southern Province, Sri Lanka
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+          <div class="space-y-2 text-sm">
+            <a href="#transfers" class="block text-slate-400 hover:text-white transition-colors">Transfers & Taxi</a>
+            <a href="#scooters" class="block text-slate-400 hover:text-white transition-colors">Scooter Rental</a>
+            <a href="#services" class="block text-slate-400 hover:text-white transition-colors">Tours & Services</a>
+            <a href="#about" class="block text-slate-400 hover:text-white transition-colors">About Mahesh</a>
+            <a href="#faq" class="block text-slate-400 hover:text-white transition-colors">Travel Tips & FAQ</a>
+          </div>
+        </div>
+
+        <!-- Google Maps -->
+        <div>
+          <h4 class="font-semibold text-white mb-4">Find Us</h4>
+          <div class="rounded-xl overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.8!2d80.3501431!3d5.9795024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae1130069f16b65%3A0x81e8ba4863c28e40!2sSMA%20Rent%20scooter%20%26%20taxi%20service!5e0!3m2!1sen!2slk!4v1708300000000!5m2!1sen!2slk"
+              width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="rounded-xl">
+            </iframe>
+          </div>
+          <a href="https://maps.app.goo.gl/LYupsjFLDxjuG5wV9" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white mt-3 transition-colors">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            Open in Google Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-slate-700/50 mt-12 pt-8 text-center">
+        <p class="text-sm text-slate-500">&copy; 2026 SMA Scooter Rental & Taxi Service. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================ -->
+  <!-- FLOATING WHATSAPP BUTTON                      -->
+  <!-- ============================================ -->
+  <a href="https://wa.me/94719331263?text=Hi%20Mahesh,%20I'd%20like%20to%20inquire%20about..." target="_blank" rel="noopener"
+     aria-label="Contact us on WhatsApp"
+     class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-110 whatsapp-pulse">
+    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ============================================ -->
+  <!-- JAVASCRIPT                                    -->
+  <!-- ============================================ -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    menuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuBtn.querySelector('i');
+      icon.setAttribute('data-lucide', menuOpen ? 'x' : 'menu');
+      lucide.createIcons();
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOpen = false;
+        mobileMenu.classList.add('hidden');
+        const icon = menuBtn.querySelector('i');
+        icon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+      });
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const icon = btn.querySelector('i');
+        const isOpen = answer.classList.contains('open');
+
+        // Close all others
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+        document.querySelectorAll('.faq-toggle i').forEach(i => i.style.transform = 'rotate(0deg)');
+
+        // Toggle current
+        if (!isOpen) {
+          answer.classList.add('open');
+          icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
